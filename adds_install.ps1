@@ -26,7 +26,7 @@ if ($answer02 -eq 'y') || ($answer02 -eq 'Y') {
 elseif ($answer02 -eq 'n') || ($answer02 -eq 'N') { 
    echo "Do you want to promote '$hostname' to a secondary domain controller? y/n:"
    $answer03 = Read-Host
-   if ($answer03 -eq 'y') || ($answer02 -eq 'Y') { 
+   if ($answer03 -eq 'y') || ($answer03 -eq 'Y') { 
       echo "What is the name of the domain you wish to add '$hostname' to? Include any extensions (ex. name.local):"
       $domain_name = Read-Host
 
