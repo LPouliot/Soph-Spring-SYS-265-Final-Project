@@ -1,3 +1,5 @@
+# THIS FILE HAS NOT BEEN TESTED YET
+
 # This Powershell Script can install AD Domain Services, initialize a forest, and promote a server to a domain controller in an existing domain
 # Author: Savannah Ciak
 # Champlain College
