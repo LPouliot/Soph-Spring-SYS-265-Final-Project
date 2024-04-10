@@ -1,0 +1,5 @@
+# /home/deployer/ansible
+[ansible_test]
+util01-row
+[management]
+mgmt01-row
