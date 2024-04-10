@@ -1,1 +1,2 @@
+# etc/sudoers.d/sys265
 deployer         ALL=(ALL)        NOPASSWD: ALL
