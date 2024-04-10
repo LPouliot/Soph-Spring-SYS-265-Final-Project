@@ -1,5 +1,7 @@
 # /home/deployer/ansible
-[ansible_test]
+[linux]
 util01-row
-[management]
+[windows]
 mgmt01-row
+dc01-row
+dc01-row
