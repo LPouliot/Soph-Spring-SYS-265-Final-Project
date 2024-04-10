@@ -6,4 +6,4 @@ mgmt01-row
 dc01-row
 dc01-row
 [windows:vars]
-ansible_shel_type=powershell
+ansible_shell_type=powershell
