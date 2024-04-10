@@ -1,0 +1,19 @@
+# This is the network config written by 'subiquity"
+# Edited by Savannah Ciak for mgmt02-row 
+# 10 April 2024
+
+network:
+  renderer: networkd
+  ethernets: 
+    ens160:
+      dhcp4: no
+      addresses:
+        - 172.16.1.60/24
+      routes:
+        - to: default
+          via: 172.16.1.2
+      nameservers:
+        search:
+          - "backrow.local"
+        addresses: [172.16.1.12]
+  version: 2
