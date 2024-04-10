@@ -42,4 +42,14 @@
   debug:
     msg: "http://{{ ansible_fqdn}}"
 
-
+- name: Updating the Firewall Ports
+  hosts: targets
+  become: yes
+  
+  tasks: 
+    - name: Add 80/tcp to Firewall
+      firewalld: 
+        port: 80/tcp
+        permanent: yes
+        state: enabled
+    
