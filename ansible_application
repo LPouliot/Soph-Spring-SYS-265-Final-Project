@@ -1,0 +1,13 @@
+# This Script can install an Apache web server for testing and demonstration purposes  
+# Author: Lily Pouliot
+# Pulled from Ansible Galaxy 
+# Champlain College
+# 10 April, 2024
+
+# The only requirement is to include port 80 in the firewall 
+sudo firewall-cmd --permanent --add-port=80/tcp
+sudo firewall-cmd --reload 
+sudo firewall-cmd --query-port=80/tcp
+
+
+
