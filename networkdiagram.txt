@@ -1,11 +1,20 @@
 @startuml
+'https://plantuml.com/archimate-diagram
 
 
 !include  <office/Servers/application_server>
 !include <office/Servers/database_server>
 
 
-title SYS265 Final Project Network Diagram - Milestone 01\n Team: Backrow Spring'24
+title SYS265 Final Project Network Diagram - Milestone 02\n Team: Backrow Spring'24
+
+legend
+  OS Identification
+  
+  Windows = Rectangle
+  Linux = Circle
+endlegend
+
 
 nwdiag {
   
@@ -19,15 +28,23 @@ nwdiag {
       address = "172.16.1.2";
       color = "palegreen";
       description = "LAN";
+      
+      group domain {
+      description = "Domain-joined (backrow.local)"
+      color = "yellow"
+      
       dc01 [address = "172.16.1.12" , shape = node , description = "dc01\n Windows Server Core 2019\n Service_ADDS" ];
       dc02 [address = "172.16.1.13" , shape = node , description = "dc02 \n Windows Server Core 2019\n Service_ADDS" ];
       mgmt01 [address = "172.16.1.60" , shape = node , description = "mgmt01\n Windows Server 2019 GUI\n Service_ServerGUI"];
       wks01 [address = "172.16.1.100" , shape = node , description = "wks01\n Windows 10"];
       wks02 [address = "172.16.1.101" , shape = node , description = "wks02\n Windows 10"];
-      
+      mgmnt02 [address = "172.16.1.60" , shape = storage , description = "mgmt02\n Unbuntu\n ansible_service"]
+      util01 [address = "172.16.1.15" , shape = storage , description = "util01\n CentOS 7\n "]
+      }
+     
+      dhcp01 [ address = "172.16.1.10" , shape = storage , description = "dhcp01\n CentOS 7\n dhcpd_service"]
+      dhcp02 [ address = "172.16.1.11" , shape = storage , description = "dhcp02\n CentOS 7\n dhcpd_service"]
       
       }
   }
-    
 @endyml
-
