@@ -1,0 +1,2 @@
+failover peer "failover-dhcp" {
+  primary;
