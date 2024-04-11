@@ -4,13 +4,13 @@ failover peer “failover-dhcp” {
   port 847;
   peer address 172.16.1.11;
   peer port 647;
-  max-response-delay 186;
+  max-response-delay 180;
   mclt 1800;
   split 128;
   load balance max seconds 3;
 }
 
-subnet 172.16.1.@ netmask 255.255.255.0 {
+subnet 172.16.1.0 netmask 255.255.255.0 {
         option routers 172.16.1.2;
         option subnet-mask 255.255.255.0;
         option domain-search "backrow.local";
