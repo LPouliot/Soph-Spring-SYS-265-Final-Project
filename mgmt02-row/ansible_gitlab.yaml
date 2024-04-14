@@ -9,7 +9,7 @@
   tasks:
     - name: Install GitLab Dependencies
       yum:
-        name: ['curl', 'openssh-server, 'postfix']
+        name: ['curl', 'openssh-server', 'postfix']
 
     - name: Install GitLab Package Repository
       yum_repository:
@@ -25,25 +25,25 @@
         name: 'gitlab-ce'
         state: present
 
-   - name: Open port 80
-     firewalld:
-       service: http
+    - name: Open port 80
+      firewalld:
+        service: http
+        state: enabled
+        permanent: yes
+        immediate: yes
+
+   - name: Open port 443
+     firewalld: 
+       service: https
        state: enabled
        permanent: yes
        immediate: yes
 
-  - name: Open port 443
-    firewalld: 
-      service: https
-      state: enabled
-      permanent: yes
-      immediate: yes
-
-  - name: Reload firewall
-    command: firewall-cmd --reload 
+   - name: Reload firewall
+     command: firewall-cmd --reload 
        
-  - name: Enable and Start GitLab
-    systemd:
-      name: gitlab-runsvdir.service
-      state: started
-      enabled: yes
+   - name: Enable and Start GitLab
+     systemd:
+       name: gitlab-runsvdir.service
+       state: started
+       enabled: yes
