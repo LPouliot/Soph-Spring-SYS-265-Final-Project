@@ -6,7 +6,7 @@
 !include <office/Servers/database_server>
 
 
-title SYS265 Final Project Network Diagram - Milestone 02\n Team: Backrow Spring'24
+title SYS265 Final Project Network Diagram - Milestone 03\n Team: Backrow Spring'24
 
 legend
   OS Identification
@@ -38,10 +38,13 @@ nwdiag {
       mgmt01 [address = "172.16.1.60" , shape = node , description = "mgmt01\n Windows Server 2019 GUI\n Service_ServerGUI"];
       wks01 [address = "172.16.1.100" , shape = node , description = "wks01\n Windows 10"];
       wks02 [address = "172.16.1.101" , shape = node , description = "wks02\n Windows 10"];
+      dfs01 [address = "172.16.1.80" , shape = node , description = "dfs01\n Windows Server 2016\n File_Service"];
+      dfs02 [address = "172.16.1.81" , shape = node , description = "dfs02\n Windows Server 2016\n File_Service"];
       mgmnt02 [address = "172.16.1.60" , shape = storage , description = "mgmt02\n Unbuntu\n ansible_service"]
       util01 [address = "172.16.1.15" , shape = storage , description = "util01\n CentOS 7\n "]
       }
-     
+      
+      docker01 [address = "172.16.1.5" , shape = storage , description = "docker01\n Unbuntu\n docker_server"];
       dhcp01 [ address = "172.16.1.10" , shape = storage , description = "dhcp01\n CentOS 7\n dhcpd_service"]
       dhcp02 [ address = "172.16.1.11" , shape = storage , description = "dhcp02\n CentOS 7\n dhcpd_service"]
       
