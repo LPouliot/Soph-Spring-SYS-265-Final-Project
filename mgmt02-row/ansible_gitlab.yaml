@@ -15,7 +15,7 @@
       yum_repository:
         name: 'gitlab'
         description: 'GitLab Community Edition'
-        baseurl: 'https://packages.gitlab.com/gitlab/gitlab-ce/el/7/$basearch'
+        baseurl: 'https://packages.gitlab.com/gitlab/gitlab-ce/el/7/x86_64'
         gpgkey: 'https://packages.gitlab.com/gpg.key'
         enabled: yes
         gpgcheck: yes
