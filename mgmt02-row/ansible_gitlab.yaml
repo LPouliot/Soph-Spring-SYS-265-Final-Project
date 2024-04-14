@@ -32,18 +32,18 @@
         permanent: yes
         immediate: yes
 
-   - name: Open port 443
-     firewalld: 
-       service: https
-       state: enabled
-       permanent: yes
-       immediate: yes
+    - name: Open port 443
+      firewalld: 
+        service: https
+        state: enabled
+        permanent: yes
+        immediate: yes
 
-   - name: Reload firewall
-     command: firewall-cmd --reload 
+    - name: Reload firewall
+      command: firewall-cmd --reload 
        
-   - name: Enable and Start GitLab
-     systemd:
-       name: gitlab-runsvdir.service
-       state: started
-       enabled: yes
+    - name: Enable and Start GitLab
+      systemd:
+        name: gitlab-runsvdir.service
+        state: started
+        enabled: yes
