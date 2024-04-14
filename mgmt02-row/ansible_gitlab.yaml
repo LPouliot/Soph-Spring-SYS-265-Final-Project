@@ -1,4 +1,4 @@
-# Ansible playbook to install GitLab
+# Ansible playbook to install GitLab on CentOS7 
 # Savannah Ciak
 # April 2024
 
@@ -42,3 +42,8 @@
   - name: Reload firewall
     command: firewall-cmd --reload 
        
+  - name: Enable and Start GitLab
+    systemd:
+      name: gitlab-runsvdir.service
+      state: started
+      enabled: yes
