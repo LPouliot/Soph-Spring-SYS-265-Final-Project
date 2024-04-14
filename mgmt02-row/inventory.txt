@@ -1,6 +1,8 @@
 # /home/deployer/ansible
 [linux]
 util01-row
+dhcp01-row
+dhcp02-row
 [windows]
 mgmt01-row
 dc01-row
