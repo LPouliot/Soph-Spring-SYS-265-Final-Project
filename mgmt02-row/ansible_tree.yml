@@ -1,2 +1,9 @@
 - name: Install tree 
-  hosts: 
+  hosts: linux
+  become: yes
+
+  tasks:
+    - Install tree
+      yum:
+        name: tree
+        state: present
