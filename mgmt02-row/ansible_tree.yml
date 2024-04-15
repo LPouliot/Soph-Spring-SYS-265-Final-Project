@@ -3,7 +3,7 @@
   become: yes
 
   tasks:
-    - Install tree
+    - name: install tree
       yum:
         name: tree
         state: present
