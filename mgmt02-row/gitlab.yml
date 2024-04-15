@@ -1,0 +1,32 @@
+# Installing GitLab on util01-row using Ansible Galaxy playbook by juliovp01
+# https://github.com/juliovp01/gitlab-centos
+# https://galaxy.ansible.com/ui/standalone/roles/juliovp01/gitlab-centos/install/
+# installation Command: ansible-galaxy role install juliovp01.gitlab-centos
+# run the file with this: ansible-playbook -i inventory.txt gitlab.yml 
+
+- name: gitlab util01-row
+  hosts: util01-row
+  become: true 
+  vars:
+    install_utilities: false
+    firewalld_enable: true
+  vars_files:
+    - vars/main.yml
+  roles:
+    - juliovp01.gitlab-centos
+
+  tasks:
+  - name: add firewall rule
+    firewalld: 
+      port: 443/tcp
+      permanent: true
+      state: enabled
+
+  - name: add second firewall rule
+    firewalld:
+      port: 80/tcp
+      permanent: true
+      state: enabled
+
+  handlers:
+    - include: handlers/main.yml
