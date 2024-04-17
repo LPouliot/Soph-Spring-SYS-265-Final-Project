@@ -14,7 +14,7 @@
       microsoft.ad.user:
         identity: bob
         Firstname: bob
-        password: bobpassword2023!
+        password: BobPassword01!
         path: ou="Ansible_Users",dc=backrow,dc=local
         enabled: yes
         state: present
