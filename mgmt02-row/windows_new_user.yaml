@@ -26,4 +26,4 @@
       microsoft.ad.user:
         identity: bob
         path: ou="Ansible_Users",dc=backrow,dc=local
-        state: query
+        state: present
