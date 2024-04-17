@@ -6,6 +6,14 @@
 
 # May Need to install module using `ansible-galaxy collection install microsoft.ad`
 
+- name: Install microsoft.ad
+  hosts: localhost
+  become: yes
+  tasks: 
+    - name: Install microsoft.ad
+      ansible.builtin.shell: |
+        ansible-galaxy collection install microsoft.ad
+
 - name: Create New Windows Domain User
   hosts: dc01-row
   become: yes
