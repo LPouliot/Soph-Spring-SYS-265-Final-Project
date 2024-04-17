@@ -8,7 +8,6 @@
 
 - name: Install microsoft.ad
   hosts: localhost
-  become: yes
   tasks: 
     - name: Install microsoft.ad
       ansible.builtin.shell: |
