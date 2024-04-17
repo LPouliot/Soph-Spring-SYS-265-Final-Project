@@ -18,6 +18,8 @@
         path: ou="Ansible_Users",dc=backrow,dc=local
         enabled: yes
         state: present
+        domain_username: Insert your domain username 
+        domain_password: Insert your domain password 
         domain_server: dc01-row.backrow.local
         
     - name: Check new user account status
