@@ -1,2 +1,19 @@
 # Configuration file for docker01-row 
 # Author: Lily Pouliot 
+
+# This is the network config written by 'subiquity'
+network:
+  renderer: networkd
+  ethernets:
+    ens160:
+      dhcp4: no
+      addresses:
+        - 172.16.1.5/24
+      routes:
+        - to: default
+          via: 172.16.1.2
+      nameservers:
+        search:
+          - "backrow.local"
+        addresses: [172.16.1.12]
+version: 2
