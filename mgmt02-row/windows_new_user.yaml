@@ -4,6 +4,8 @@
 # Author Savannah Ciak
 # 17 April 2024
 
+# May Need to install module using `ansible-galaxy collection install microsoft.ad`
+
 - name: Create New Windows Domain User
   hosts: dc01-row
   become: yes
