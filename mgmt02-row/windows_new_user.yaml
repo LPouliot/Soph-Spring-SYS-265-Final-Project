@@ -16,7 +16,6 @@
 
 - name: Create New Windows Domain User
   hosts: dc01-row
-  become: yes
 
   tasks:
     - name: Create new user 
