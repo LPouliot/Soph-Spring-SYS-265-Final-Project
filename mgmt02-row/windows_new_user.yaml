@@ -18,7 +18,7 @@
         path: ou="Ansible_Users",dc=backrow,dc=local
         enabled: yes
         state: present
-        domain_server: dc01-row@backrow.local
+        domain_server: dc01-row.backrow.local
         
     - name: Check new user account status
       microsoft.ad.user:
