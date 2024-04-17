@@ -1,3 +1,7 @@
+# Ansible playbook to install the microsoft.ad module (needs version above Ansible 2.10.8)
+# Author Savannah Ciak
+# 17 April 2024
+
 - name: Install microsoft.ad
   hosts: localhost
   tasks: 
