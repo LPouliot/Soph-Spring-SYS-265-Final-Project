@@ -1,5 +1,26 @@
 # Ansible playbook to create a new windows domain user 
-# using the community.windows.win_domain_user module
+# Resource in the examples of: 
+# https://docs.ansible.com/ansible/latest/collections/microsoft/ad/user_module.html#ansible-collections-microsoft-ad-user-module
 # Author Savannah Ciak
 # 17 April 2024
 
+- name: Create New Windows Domain User
+  hosts: dc01-row
+  become: yes
+
+  tasks:
+    - name: Create new user 
+      microsoft.ad.user:
+        identity: bob
+        Firstname: bob
+        password: bobpassword2023!
+        path: ou="Ansible_Users",dc=backrow,dc=local
+        enabled: yes
+        state: present
+        domain_server: dc01-row@backrow.local
+        
+    - name: Check new user account status
+      microsoft.ad.user:
+        identity: bob
+        path: ou="Ansible_Users",dc=backrow,dc=local
+        state: query
