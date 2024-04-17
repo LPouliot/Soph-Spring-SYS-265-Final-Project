@@ -1,0 +1,5 @@
+# Ansible playbook to create a new windows domain user 
+# using the community.windows.win_domain_user module
+# Author Savannah Ciak
+# 17 April 2024
+
