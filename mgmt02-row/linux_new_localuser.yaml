@@ -2,3 +2,18 @@
 # Author Savannah Ciak
 # 22 April 2024 
 
+- name: Add a new Linux local user
+  hosts: util01-row
+  become: yes
+  vars:
+    username: username
+    password: password
+
+  tasks: 
+    - name: Check User Status
+      user:
+        name: "{{ username }}"
+        password: "{{password | password_hash('sha512', 'mysecretsalt') }}" 
+        shell: /bin/bash
+        createhome: yes
+        state: present
