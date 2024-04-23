@@ -1,9 +1,14 @@
+# Installs the tree package using yum
+# Ansible playbook
+# Author Savannah Ciak
+# 22 April 2024
+
 - name: Install tree 
   hosts: linux
   become: yes
 
   tasks:
     - name: install tree
-      yum:
+      yum: # Change this line to 'apt:' is using on an ubuntu like OS
         name: tree
         state: present
