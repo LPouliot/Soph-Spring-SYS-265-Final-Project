@@ -1,3 +1,8 @@
+# Configuration file for docker01-row 
+# Author: Lily Pouliot 
+
+# complete docker-compose.yml file 
+
 version: "3.9"
 services:
    nginx:
