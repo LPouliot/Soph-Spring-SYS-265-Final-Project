@@ -17,18 +17,15 @@ endlegend
 
 
 nwdiag {
-  
   network WAN {
-      address = "10.0.17.26"
-      color = "grey";
-      description = "WAN";
-      fw01 [address = "172.16.1.2" , shape = node , description = "fw01\n PfSense Firewall"];
+      address = "10.0.17.2"
+      fw01 [address = "172.16.1.26" , shape = node , description = "fw01\n PfSense Firewall"];
   }
   network LAN {
-      address = "172.16.1.2";
+      address = "172.16.1.2 /24";
       color = "palegreen";
       description = "LAN";
-      
+      fw01 [address = "172.16.1.2" , shape = node , description = "fw01\n PfSense Firewall"];
       group domain {
       description = "Domain-joined (backrow.local)"
       color = "yellow"
@@ -47,7 +44,6 @@ nwdiag {
       docker01 [address = "172.16.1.5" , shape = storage , description = "docker01\n Unbuntu\n docker_server"];
       dhcp01 [ address = "172.16.1.10" , shape = storage , description = "dhcp01\n CentOS 7\n dhcpd_service"]
       dhcp02 [ address = "172.16.1.11" , shape = storage , description = "dhcp02\n CentOS 7\n dhcpd_service"]
-      
       }
   }
 @endyml
