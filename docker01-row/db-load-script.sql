@@ -1,4 +1,7 @@
+/* Configuration file for docker01-row */
+/* Author: Lily Pouliot */
 
+/* This file creates a table and insert data into an already created database called ecombd, which can be found in the docker-compose.yml file */
 
 cat > db-load-script.sql <<-EOF
 USE ecomdb;
