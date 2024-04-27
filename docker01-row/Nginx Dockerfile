@@ -1,0 +1,7 @@
+# Configuration file for docker01-row 
+# Author: Lily Pouliot 
+
+# This a Dockerfile for the nginx directory 
+
+FROM nginx
+COPY ./default.conf /etc/nginx/conf.d/default.conf
